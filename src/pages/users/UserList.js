@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {fetchUserList} from "../../store/actions";
 import {userListSelector} from "../../store/selectors";
-import {UserRow} from "./UserRow";
+import {User} from "./User";
 import {Table} from "../../components/Table";
 
 export const UserList = () => {
@@ -18,8 +18,8 @@ export const UserList = () => {
     }
 
     return (
-        <>
-            <Table items={userList} itemCell={UserRow}/>
-        </>
+        <div>
+            <Table items={userList} itemCell={User}/>
+        </div>
     );
 };
