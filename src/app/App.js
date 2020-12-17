@@ -4,11 +4,12 @@ import thunk from 'redux-thunk';
 import {BrowserRouter} from 'react-router-dom';
 import {Routes} from "./Routes";
 import {rootReducer} from "../store/rootReducer";
+import {AppLayout} from "./AppLayout";
 
 import './App.css';
 
 const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
 
 const enhancer = composeEnhancers(
     applyMiddleware(thunk),
@@ -20,7 +21,9 @@ function App() {
     return (
         <BrowserRouter>
             <ReduxProvider store={store}>
-                <Routes/>
+                <AppLayout>
+                    <Routes/>
+                </AppLayout>
             </ReduxProvider>
         </BrowserRouter>
     );

@@ -1,0 +1,23 @@
+header {
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #24292e;
+    display: flex;
+    justify-content: center;
+}
+
+.github-icon {
+    fill: #ffffff;
+}
+
+footer {
+    height: 50px;
+    margin-top: 24px;
+    padding: 16px 0;
+    border-top: 1px solid #586069;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
