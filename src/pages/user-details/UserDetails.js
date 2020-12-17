@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useParams} from 'react-router-dom';
 import {fetchUserDetails, clearCurrentUser} from "../../store/actions";
 import {currentUserSelector} from "../../store/selectors";
+import {Loader} from "../../components/Loader";
 import './UserDetails.css';
 
 export const UserDetails = () => {
@@ -17,7 +18,7 @@ export const UserDetails = () => {
     }, [dispatch, id]);
 
     if (!user) {
-        return <h2>Loading...</h2>
+        return <Loader/>
     }
 
     return (

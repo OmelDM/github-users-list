@@ -5,6 +5,7 @@ import {fetchUserList} from "../../store/actions";
 import {userListSelector} from "../../store/selectors";
 import {User} from "./User";
 import {Table} from "../../components/Table";
+import {Loader} from "../../components/Loader";
 
 export const UserList = () => {
     const dispatch = useDispatch();
@@ -19,8 +20,8 @@ export const UserList = () => {
         history.push(`/users/${user.id}`)
     }
 
-    if (!userList) {
-        return <h2>Loading...</h2>
+    if (!userList || userList.length === 0) {
+        return <Loader/>
     }
 
     return (
