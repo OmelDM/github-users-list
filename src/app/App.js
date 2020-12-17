@@ -14,7 +14,7 @@ const enhancer = composeEnhancers(
     applyMiddleware(thunk),
 );
 
-const store = createStore(rootReducer, enhancer)
+const store = createStore(rootReducer, {}, enhancer)
 
 function App() {
     return (
