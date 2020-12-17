@@ -1,8 +1,10 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import {Users} from "../pages/Users";
-import {UserDetails} from "../pages/UserDetails";
-import {NotFound} from "../pages/NotFound";
+import {UserDetails} from "../pages/user-details/UserDetails";
+import {Users} from "../pages/users/Users";
+import {NotFound} from "../pages/not-found/NotFound";
+
+
 
 export const Routes = () => {
     return (

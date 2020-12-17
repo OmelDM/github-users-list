@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {fetchUserList} from "../../../store/actions";
-import {userListSelector} from "../../../store/selectors";
+import {fetchUserList} from "../../store/actions";
+import {userListSelector} from "../../store/selectors";
 import {UserRow} from "./UserRow";
+import {Table} from "../../components/Table";
 
 export const UserList = () => {
     const dispatch = useDispatch();
@@ -17,10 +18,8 @@ export const UserList = () => {
     }
 
     return (
-        <ul>
-            {
-                userList.map(user => <UserRow key={user.id} user={user}/>)
-            }
-        </ul>
+        <>
+            <Table items={userList} itemCell={UserRow}/>
+        </>
     );
 };
