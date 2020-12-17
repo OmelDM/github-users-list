@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import {UserList} from "../pages/UserList";
+import {Users} from "../pages/Users";
 import {UserDetails} from "../pages/UserDetails";
 import {NotFound} from "../pages/NotFound";
 
@@ -11,7 +11,7 @@ export const Routes = () => {
                 <UserDetails/>
             </Route>
             <Route exact={true} path="/">
-                <UserList/>
+                <Users/>
             </Route>
             <Route>
                 <NotFound/>

@@ -5,8 +5,8 @@ const updateUserList = (users) => ({
     payload: users,
 });
 
-export const fetchUserList = () => (dispatch, getState) => {
-    fetch('https://api.github.com/users')
+export const fetchUserList = ({perPage = 20, lastId = 0} = {}) => (dispatch, getState) => {
+    fetch(`https://api.github.com/users?per_page=${perPage}&since=${lastId}`)
         .then(response => response.json())
         .then(data => data.reduce((acc, user) => ({
             ...acc,

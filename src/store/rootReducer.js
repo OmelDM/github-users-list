@@ -5,7 +5,10 @@ export const rootReducer = (state, action) => {
     switch (action.type) {
         case UPDATE_USER_LIST: {
             return {
-                userList: action.payload,
+                userList: {
+                    ...state.userList,
+                    ...action.payload,
+                }
             }
         }
 
