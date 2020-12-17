@@ -1,9 +1,19 @@
 import React from 'react';
 
-export const Table = ({items, itemCell: Cell}) => {
+export const Table = ({items, itemCell: Cell, onRowClick}) => {
+    const handleRowClick = (item) => () => {
+        if (onRowClick) {
+            onRowClick(item);
+        }
+    }
+
     return (
         <>
-            {items.map(item => <Cell key={item.id} {...item}/>)}
+            {items.map(item => (
+                <div key={item.id} onClick={handleRowClick(item)}>
+                    <Cell {...item}/>
+                </div>
+            ))}
         </>
     );
 };
